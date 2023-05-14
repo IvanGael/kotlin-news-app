@@ -3,6 +3,7 @@ package com.ivan.work.newsapp.adapters
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ivan.work.newsapp.R
+import com.ivan.work.newsapp.SingleNewsActivity
 import com.ivan.work.newsapp.network.news.models.Article
 import java.text.SimpleDateFormat
 import java.util.*
@@ -27,6 +29,7 @@ class TopNewsAdapter(
         var articleDescription: TextView
         var articleImage: ImageView
         var articlePublishedAt: TextView
+        var imgInfo: ImageView
         var imgShare: ImageView
         var imgSave: ImageView
 
@@ -41,6 +44,7 @@ class TopNewsAdapter(
             articleDescription = itemView.findViewById(R.id.articleDescription)
             articleImage = itemView.findViewById(R.id.articleImage)
             articlePublishedAt = itemView.findViewById(R.id.articlePublishedAt)
+            imgInfo = itemView.findViewById(R.id.img_info)
             imgShare = itemView.findViewById(R.id.img_share)
             imgSave = itemView.findViewById(R.id.img_save)
 
@@ -119,6 +123,15 @@ class TopNewsAdapter(
                 val shareIntent = Intent.createChooser(sendIntent, article.title)
                 itemView.context.startActivity(shareIntent)
             }
+
+
+            imgInfo.setOnClickListener {
+                Intent(itemView.context, SingleNewsActivity::class.java).also {
+                    sharedPreferences.edit().putString("single_news", Gson().toJson(article)).apply()
+                    itemView.context.startActivity(it)
+                }
+            }
+
         }
 
 
