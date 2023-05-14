@@ -164,36 +164,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun newsRequest(){
-        newsService = ApiClient.newsService
-
-        val country = "us"
-        val apiKey = "09d97b84ffe44d57a059a93fbe3df3c3"
-
-        val call = newsService.getTopHeadlines(country, apiKey)
-
-        call.enqueue(object : Callback<GetTopHeadlinesResponse> {
-            override fun onResponse(call: Call<GetTopHeadlinesResponse>, response: Response<GetTopHeadlinesResponse>) {
-                if (response.isSuccessful) {
-                    val newsResponse = response.body()
-                    //val sources = newsResponse?.sources
-                    val gson = Gson()
-                    val jsonString = gson.toJson(newsResponse)
-
-                    // TODO: Handle the list of articles
-                } else {
-                    // Handle unsuccessful response
-                }
-            }
-
-            override fun onFailure(call: Call<GetTopHeadlinesResponse>, t: Throwable) {
-                // Handle API request failure
-                Log.e(TAG, "API request failed: ${t.message}")
-            }
-        })
-
-    }
-
     private fun handleCountry(country: Country, clickedImageView: ImageView?){
         Log.e(TAG, "country : ${country.name.common}")
 
