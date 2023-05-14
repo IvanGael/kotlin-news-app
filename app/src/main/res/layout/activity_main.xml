@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/my_box"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/rounded_box"
+        android:layout_gravity="center_vertical"
+        android:padding="16dp" >
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo_worldfeed"
+            android:layout_gravity="center_horizontal"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Select an country!"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <GridLayout
+            android:id="@+id/countries_grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:rowCount="5"
+            android:padding="2dp"
+            android:useDefaultMargins="true" />
+
+    </ScrollView>
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
+        android:text="Continuer"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/main"
+        android:enabled="false"
+        android:id="@+id/btnGo"/>
+
+
+
+
+</LinearLayout>

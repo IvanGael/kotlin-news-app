@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FavouriteNewsActivity">
+
+    <!--<androidx.appcompat.widget.SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        app:searchPrefixText="Search"/>-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="Let's start by adding news"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/txt_favorite_default_text"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_favourite_news"
+        android:dividerHeight="4dp"
+        android:id="@+id/list_view_favorite_news"/>
+
+</LinearLayout>

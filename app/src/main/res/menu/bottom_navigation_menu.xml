@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_top_headlines"
+        android:icon="@drawable/headline"
+        android:title="Top headlines" />
+
+    <item
+        android:id="@+id/navigation_everything"
+        android:icon="@drawable/everything"
+        android:title="Everything" />
+
+
+</menu>
